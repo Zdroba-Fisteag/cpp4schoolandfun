@@ -3,12 +3,6 @@
 #include <cmath>
 using namespace std;
 
-/*
-Tasks:
-- Implement recursion method (complete)
-- Make counter count over its own scope
-*/
-
 int maxCount(vector<vector<bool>> matrixToCount)
 {
     int currentCounter = 0;
@@ -18,12 +12,6 @@ int maxCount(vector<vector<bool>> matrixToCount)
             if (matrixToCount[i][j] == 0) {
                 currentCounter = 0;
             } else if (matrixToCount[i][j] == 1) {
-                // currentCounter++;
-                // if (matrixToCount[i-1][j] == 1 || matrixToCount[i][j-1] == 1 || matrixToCount[i+1][j] == 1 || matrixToCount[i][j+1] == 1) {
-                //     currentCounter++;
-                // }
-                // if (currentCounter > maxCounter) maxCounter = currentCounter;
-                // maxCount(matrixToCount);
                 currentCounter++;
                 if (i > 0 && matrixToCount[i-1][j]) currentCounter++;
                 if (j > 0 && matrixToCount[i][j-1]) currentCounter++;
